@@ -10,7 +10,8 @@
 
 int main(int __attribute__((unused))ac, char **av, char **env)
 {
-	char *buffer = NULL;
+	char *buffer = NULL, **token = NULL;
+	char *delim = " \0";
 	ssize_t no_bytes_read = 0;
 	size_t buffer_size = 0;
 
@@ -23,6 +24,13 @@ int main(int __attribute__((unused))ac, char **av, char **env)
 			_eof(buffer);
 		else if (*buffer == '\n')
 			free(buffer);
+		else
+		{
+			buffer[_strlen(buffer) - 1] = '\0';
+			token = _get_token(buffer, delim);
+			free(buffer);
+
+		}
 	}
 
 }

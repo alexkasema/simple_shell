@@ -10,6 +10,13 @@
 void _prompt(void);
 void _eof(char *buffer);
 
+char **_get_token(char *buffer, const char *delim);
+
+void _free_cmds(char **cmds);
+
+unsigned int _strlen(char *str);
+char *_strcpy(char *dest, char *src);
+
 
 #endif
 
