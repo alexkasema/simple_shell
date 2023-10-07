@@ -8,7 +8,7 @@
 #include <sys/wait.h>
 
 void _prompt(void);
-
+void _eof(char *buffer);
 
 
 #endif

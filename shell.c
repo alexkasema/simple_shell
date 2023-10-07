@@ -17,6 +17,12 @@ int main(int __attribute__((unused))ac, char **av, char **env)
 	while (1)
 	{
 		_prompt();
+		no_bytes_read = getline(&buffer, &buffer_size, stdin);
+
+		if (no_bytes_read == EOF)
+			_eof(buffer);
+		else if (*buffer == '\n')
+			free(buffer);
 	}
 
 }
