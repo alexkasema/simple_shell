@@ -27,7 +27,7 @@ unsigned int _strlen(char *str);
 char *_strcpy(char *dest, char *src);
 int _strcmp(char *str1, char *str2);
 char *_strcat(char *dest, char *src);
-
+int _atoi(char *str);
 
 #endif
 

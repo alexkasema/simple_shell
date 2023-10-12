@@ -26,9 +26,14 @@ void _eof(char *buffer)
 
 void _exit_shell(char **token)
 {
+	int code = 0;
+
 	if (token[1] == NULL)
 	{
 		_free_cmds(token);
 		exit(EXIT_SUCCESS);
 	}
+	code = _atoi(token[1]);
+	_free_cmds(token);
+	exit(code);
 }
