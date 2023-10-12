@@ -17,6 +17,7 @@ char **_get_token(char *buffer, const char *delim);
 void _child_process(char **token, char *name, char **env);
 void _execute(char **token, char *name, char **env);
 char **_getpath(char **env);
+void _print_env(char **env);
 
 void _free_cmds(char **cmds);
 void _free_cmds_exit(char **token);

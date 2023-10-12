@@ -15,6 +15,9 @@ void _execute(char **token, char *name, char **env)
 	struct stat buffer;
 	unsigned int i = 0;
 
+	if (_strcmp(token[0], "env") != 0)
+		_print_env(env);
+
 	if (stat(token[0], &buffer) == 0)
 	{
 		if (execve(token[0], token, env) == -1)
