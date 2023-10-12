@@ -11,6 +11,7 @@
 
 void _prompt(void);
 void _eof(char *buffer);
+void _exit_shell(char **token);
 
 char **_get_token(char *buffer, const char *delim);
 void _child_process(char **token, char *name, char **env);

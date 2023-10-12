@@ -29,7 +29,11 @@ int main(int __attribute__((unused))ac, char **av, char **env)
 			buffer[_strlen(buffer) - 1] = '\0';
 			token = _get_token(buffer, delim);
 			free(buffer);
-			_child_process(token, av[0], env);
+
+			if (_strcmp(token[0], "exit") != 0)
+				_exit_shell(token);
+			else
+				_child_process(token, av[0], env);
 		}
 		fflush(stdin);
 		buffer = NULL;

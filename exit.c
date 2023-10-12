@@ -17,3 +17,18 @@ void _eof(char *buffer)
 	free(buffer);
 	exit(EXIT_SUCCESS);
 }
+
+/**
+ * _exit_shell - a function that exits out of the shell
+ * @token: pointer to commands
+ * Return: void
+ */
+
+void _exit_shell(char **token)
+{
+	if (token[1] == NULL)
+	{
+		_free_cmds(token);
+		exit(EXIT_SUCCESS);
+	}
+}
