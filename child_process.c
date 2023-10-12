@@ -22,12 +22,8 @@ void _child_process(char **token, char *name, char **env)
 	}
 	else if (pid == 0)
 	{
-		if (execve(token[0], token, env) == -1)
-		{
-			perror(name);
-			_free_cmds_exit(token);
-		}
-
+		_execute(token, name, env);
+		_free_cmds(token);
 	}
 	else
 	{
