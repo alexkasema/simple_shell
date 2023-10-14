@@ -7,5 +7,6 @@
 
 void _prompt(void)
 {
-	write(STDOUT_FILENO, "@> ", 3);
+	if (isatty(STDIN_FILENO))
+		write(STDOUT_FILENO, "@> ", 3);
 }

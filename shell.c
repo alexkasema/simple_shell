@@ -32,6 +32,8 @@ int main(int __attribute__((unused))ac, char **av, char **env)
 
 			if (_strcmp(token[0], "exit") != 0)
 				_exit_shell(token);
+			else if (_strcmp(token[0], "cd") != 0)
+				_change_dir(token[1]);
 			else
 				_child_process(token, av[0], env);
 		}

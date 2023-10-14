@@ -13,7 +13,8 @@ void _eof(char *buffer)
 		free(buffer);
 		buffer = NULL;
 	}
-	write(STDOUT_FILENO, "\n", 1);
+	if (isatty(STDIN_FILENO))
+		write(STDOUT_FILENO, "\n", 1);
 	free(buffer);
 	exit(EXIT_SUCCESS);
 }
