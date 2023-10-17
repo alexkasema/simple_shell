@@ -11,7 +11,7 @@
 int main(int __attribute__((unused))ac, char **av, char **env)
 {
 	char *buffer = NULL, **token = NULL;
-	char *delim = " \0";
+	char *delim = " \n";
 	ssize_t no_bytes_read = 0;
 	size_t buffer_size = 0;
 
